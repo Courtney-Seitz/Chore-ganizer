@@ -17,4 +17,29 @@ class OccupantsController < ApplicationController
     @occupant = Occupant.find(params[:id])
   end
 
+
+  def edit
+    @occupant = Occupant.find(params[:id])
+  end
+
+  
+  def update
+    @occupant = Occupant.find(params[:id])
+    @occupant.update(occupant_params)
+
+    redirect_to occupant_path(@occupant)
+  end
+
+  def destroy
+    @occupant = Occupant.find(params[:id])
+    @occupant.destroy
+
+    redirect_to occupant_path(@occupant)
+  end
+
+  private
+  def occupant_params
+    params.require(:occupant).permit(:name, :age)
+  end
+
 end

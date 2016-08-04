@@ -1,7 +1,7 @@
-<h2><%= @occupant.name %></h2>
+<h2><%= "Name: " + @occupant.name %></h2>
 
-<nav>
-  <%= link_to "Household Members", occupants_path %>
-  <br/>
-  <%= link_to "Chores", chores_path %>
-</nav>
+<button><%= link_to "BACK to Household Members", occupants_path %></button>
+<button><%= link_to "EDIT Household Member " + @occupant.name, edit_occupant_path(@occupant) %></button>
+<button><%= link_to "DELETE Household Member " + @occupant.name, occupant_path(@occupant),
+method: :delete,
+data: { confirm: "Are you CERTAIN?" } %></button>

@@ -20,5 +20,9 @@ body {
 }
 
 h1 {
+/* border-style:solid; */
+}
 
+a {
+  text-decoration: none;
 }

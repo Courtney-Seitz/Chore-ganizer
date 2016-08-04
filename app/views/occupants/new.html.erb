@@ -1,0 +1,12 @@
+
+<h2>Add NEW Household Member</h2>
+
+<%= form_for @occupant do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+
+  <%= f.submit %>
+  <% end %>
