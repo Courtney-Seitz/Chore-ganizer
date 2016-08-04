@@ -4,4 +4,6 @@ class OccupantsController < ApplicationController
 
   def new
   end
+
+  
 end
