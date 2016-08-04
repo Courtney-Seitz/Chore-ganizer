@@ -1,1 +1,11 @@
 
+<h2>Household Members</h2>
+<h3><%= link_to "Add a NEW Household Member", new_occupant_path %></h3>
+
+<ul>
+  <% @occupants.each do |occupant| %>
+    <li>
+      <%= link_to occupant.name, occupant %>
+    </li>
+  <% end %>
+</ul>

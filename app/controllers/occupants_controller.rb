@@ -13,5 +13,8 @@ class OccupantsController < ApplicationController
     redirect_to occupant_path(@occupant)
   end
 
+  def show
+    @occupant = Occupant.find(params[:id])
+  end
 
 end

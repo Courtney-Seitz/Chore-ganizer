@@ -25,4 +25,4 @@ Occupant.create!([{
   age: "10"
 },
 
-  }])
+])
