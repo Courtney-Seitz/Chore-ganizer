@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'chores/new'
+root to: 'occupants#index'
 
-  get 'occupants/index'
+resources :occupants
+resources :chores
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

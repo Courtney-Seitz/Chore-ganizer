@@ -7,8 +7,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <h1>Chore-ganizer</h1>
+    <nav>
+      <%= link_to "Occupants", occupants_path %>
+      <%= link_to "Chores", chores_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>
