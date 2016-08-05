@@ -7,14 +7,13 @@
   <input name="chore[task]" value="<%= @chore.task %>">
 
 
-  <label for="chore[occupant_id]">Occupant ID:</label>
-  <input name="chore[occupant_id]" value="<%= @chore.occupant_id %>">
+  <label for="chore[description]">Description::</label>
+  <input name="chore[description]" value="<%= @chore.description %>">
 
   <input type="submit" value="Create">
 </form>
 
-
-<form action="/chores/<%= @chore.id %>" method="post">
+<form action="/occupants/:occupant_id/<%= @chore.id %>" method="delete">
   <input type="hidden" name="_method" value="delete">
   <input class="button-delete" type="submit" value="Delete!">
 </form>
