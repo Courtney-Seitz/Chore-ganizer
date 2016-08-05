@@ -1,6 +1,23 @@
 <h2>Edit Chore</h2>
 
-<%= render "form" %>
+<form action="/chores/<%= @chore.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="chore[task]">Task:</label>
+  <input name="chore[task]" value="<%= @chore.task %>">
+
+
+  <label for="chore[occupant_id]">Occupant ID:</label>
+  <input name="chore[occupant_id]" value="<%= @chore.occupant_id %>">
+
+  <input type="submit" value="Create">
+</form>
+
+
+<form action="/chores/<%= @chore.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>
 
 <br/>
 <div class="buttons">
