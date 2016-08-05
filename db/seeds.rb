@@ -5,24 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Occupant.destroy_all
+require_relative './chore_data.rb'
+require_relative './occupant_data.rb'
+
 Chore.destroy_all
+Occupant.destroy_all
 
-Occupant.create!([{
-  name: "Person1",
-  age: "50"
-},
-{
-  name: "Person2",
-  age: "30"
-},
-{
-  name: "Person3",
-  age: "20"
-},
-{
-  name: "Person4",
-  age: "10"
-},
+chore_data = get_chore_data()
+occupant_data = get_occupant_data()
 
-])
+chore_data.each_pair do |occupant_name, chores|
+  info = occupant_data[occupant_name]
+  current_occupant = Occupant.create!({
+    name:         info[:name],
+    age:          info[:age]
+    })
+
+    chores.each do |chore|
+      Chore.create!({
+        task:        chore[:task],
+        description: chore[:description],
+        occupant:    current_occupant
+        })
+      end
+    end
