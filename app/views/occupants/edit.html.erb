@@ -1,4 +1,4 @@
-<h2>EDIT Househole Member</h2>
+<h2>EDIT Household Member</h2>
 
 <%= form_for @occupant do |f| %>
   <%= f.label :name %>
@@ -9,3 +9,7 @@
 
   <%= f.submit %>
   <% end %>
+  <br/>
+<div class="buttons">
+  <button><%= link_to "BACK to Household Members", occupants_path %></button>
+</div>

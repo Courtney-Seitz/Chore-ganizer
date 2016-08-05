@@ -1,6 +1,5 @@
 
 <h3>Household Members</h3>
-<button><%= link_to "Add a NEW Household Member", new_occupant_path %></button>
 
 <ul>
   <% @occupants.each do |occupant| %>
@@ -10,3 +9,6 @@
     </li>
   <% end %>
 </ul>
+<div class="buttons">
+<button><%= link_to "Add a NEW Household Member", new_occupant_path %></button>
+</div>
