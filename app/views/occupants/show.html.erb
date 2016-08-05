@@ -1,5 +1,16 @@
 <h2><%= "Name: " + @occupant.name %></h2>
 <h2><%= "Age: " + @occupant.age %></h2>
+<br/>
+<h3>Chores</h3>
+<ul>
+  <% @occupant.chores.each do |chore| %>
+    <li>
+      <p><%= link_to "Task: #{chore.task} | Description: #{chore.description}", occupant_chore_path(@occupant, chore) %></p>
+    </li>
+  <% end %>
+</ul>
+
+<br/>
 <div class="buttons">
 <button><%= link_to "EDIT Household Member " + @occupant.name, edit_occupant_path(@occupant) %></button>
 <button><%= link_to "DELETE Household Member " + @occupant.name, occupant_path(@occupant),
