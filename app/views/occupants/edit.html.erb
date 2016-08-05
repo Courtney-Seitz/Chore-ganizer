@@ -1,14 +1,7 @@
 <h2>EDIT Household Member</h2>
 
-<%= form_for @occupant do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<%= render "form" %>
 
-  <%= f.label :age %>
-  <%= f.text_field :age %>
-
-  <%= f.submit %>
-  <% end %>
   <br/>
 <div class="buttons">
   <button><%= link_to "BACK to Household Members", occupants_path %></button>
